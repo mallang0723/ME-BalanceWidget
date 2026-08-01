@@ -33,6 +33,18 @@ Being upfront:
 
 1. **`.env` gate**: add `ENABLE_EXTERNAL_EXTENSIONS=true` to the `.env` in
    your install folder, then restart.
+> **🐳 Using Docker?** — edit `docker-compose.yml` instead of `.env`.
+> Find the `environment:` line and add **one line** under it (match the
+> indentation of its neighbors):
+>
+> ```yaml
+>       - ENABLE_EXTERNAL_EXTENSIONS=true
+> ```
+>
+> Save, then run `docker compose up -d`.
+> If you access Marinara from another device's browser, also add
+> `- ADMIN_SECRET=yoursecret` in the same place (needed to open the Danger Zone).
+
 2. **In-app gate**: **Settings → Advanced → Danger Zone → Allow third-party
    extension imports**.
 3. **Import**: download `marinara-balance-widget.zip` from the

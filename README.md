@@ -43,6 +43,13 @@ CLI 스크립트 `balance.mjs`가 대신합니다.
 > 저장한 뒤 `docker compose up -d` 를 실행하면 적용됩니다.
 > 다른 기기 브라우저로 접속해 쓰신다면 같은 자리에
 > `- ADMIN_SECRET=원하는비밀값` 도 한 줄 추가하세요 (위험 구역을 열 때 필요).
+> 적용됐는지 확인하려면:
+>
+> ```sh
+> docker compose exec marinara env | grep ENABLE_EXTERNAL
+> ```
+>
+> 값이 나오면 적용된 것이고, 안 나오면 `docker compose up -d` 를 한 번 더 실행하세요.
 
 2. **앱 게이트**: **Settings**(설정) → **Advanced**(고급) → **Danger Zone**
    (위험 구역) → **Allow third-party extension imports**(서드파티 확장

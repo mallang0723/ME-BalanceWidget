@@ -44,6 +44,13 @@ Being upfront:
 > Save, then run `docker compose up -d`.
 > If you access Marinara from another device's browser, also add
 > `- ADMIN_SECRET=yoursecret` in the same place (needed to open the Danger Zone).
+> To confirm it took effect:
+>
+> ```sh
+> docker compose exec marinara env | grep ENABLE_EXTERNAL
+> ```
+>
+> If the value prints, it's applied; if not, run `docker compose up -d` once more.
 
 2. **In-app gate**: **Settings → Advanced → Danger Zone → Allow third-party
    extension imports**.

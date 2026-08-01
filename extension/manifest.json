@@ -1,0 +1,10 @@
+{
+  "kind": "marinara.extension",
+  "version": 1,
+  "config": {
+    "name": "API 잔액 위젯",
+    "description": "플로팅 💰 버튼으로 DeepSeek 잔액과 OpenRouter 크레딧을 확인합니다. 키는 잔액 조회를 위해 각 제공자(DeepSeek/OpenRouter)로만 전송되며, 마리나라 서버 DB에 평문 저장됩니다(프로필 내보내기에 포함될 수 있음). 자세한 내용은 README 참고. (Marinara 2.3.5)",
+    "enabled": true,
+    "jsPath": "extension.js"
+  }
+}

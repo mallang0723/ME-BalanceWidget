@@ -13,7 +13,7 @@ the bundled CLI script `balance.mjs` covers that instead.
 
 | Marinara version | Release to use |
 |---|---|
-| **2.3.5 (staging)** | **v2.0.0 (latest)** — this README |
+| **2.5.2 (QA verified 2026-11-06)** | **v2.0.1** — current source / this README |
 | 2.3.3 and earlier | v1.0.0 (legacy, marked pre-release) |
 | 2.3.4 | no extension system — cannot be used |
 
@@ -29,7 +29,7 @@ Being upfront:
 - Consider using a dedicated read-only/limited key (OpenRouter supports
   per-key limits).
 
-## Install (Marinara 2.3.5, four safety gates)
+## Install (Marinara 2.5.2, four safety gates)
 
 1. **`.env` gate**: add `ENABLE_EXTERNAL_EXTENSIONS=true` to the `.env` in
    your install folder, then restart.
@@ -56,9 +56,37 @@ Being upfront:
    extension imports**.
 3. **Import**: download `marinara-balance-widget.zip` from the
    [**Releases page**](../../releases/latest), then import it **as-is** in
-   **Settings → Addons → External Extensions**.
+   **Settings → Addons → External Extensions** using **Import Extension File**.
+   For a folder install, use **Import Extension Folder** and select the
+   `extension` folder containing `manifest.json` and `extension.js`.
 4. **Approve**: power icon → the **full page access** dialog → **"Run this
    exact code"**. *(The dialog reappears whenever the file changes — by design.)*
+
+## Install from GitHub
+
+Marinara 2.5.2's **External Extensions** only offers **Import Extension File**
+and **Import Extension Folder**; it has no GitHub install field. To install
+from GitHub, enable extension imports as described above, then install and
+enable a GitHub-installer extension such as
+[ME.Fetchy](https://github.com/FigCake/ME.Fetchy). Enter this exact path in
+that extension's GitHub install field:
+
+```text
+mallang0723/ME-BalanceWidget/extension
+```
+
+Approve **full page access** and enable the extension. This is the existing
+permission needed to add the button and panel to the page; no access is added.
+
+Manual ZIP import remains available. To package the current source, run this
+from the repository root and import the resulting ZIP using the steps above.
+Both files will be at the ZIP root:
+
+```bash
+(cd extension && zip ../marinara-balance-widget.zip manifest.json extension.js)
+```
+
+See the [changelog (Korean)](./CHANGELOG.md) for changes.
 
 ## Usage
 

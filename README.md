@@ -13,7 +13,7 @@ CLI 스크립트 `balance.mjs`가 대신합니다.
 
 | Marinara 버전 | 사용할 릴리스 |
 |---|---|
-| **2.3.5 (staging)** | **v2.0.0 (최신)** — 이 README 기준 |
+| **2.5.2 (2026-11-06 QA 검증)** | **v2.0.1** — 현재 소스 / 이 README 기준 |
 | 2.3.3 이하 | v1.0.0 (legacy, pre-release 표시) |
 | 2.3.4 | 확장 시스템이 없어 사용 불가 |
 
@@ -29,7 +29,7 @@ CLI 스크립트 `balance.mjs`가 대신합니다.
 - 잔액 조회 전용 키를 따로 만들어 쓰는 것을 권합니다 (OpenRouter는 키별
   한도 설정 가능).
 
-## 설치 (Marinara 2.3.5, 안전장치 4단계)
+## 설치 (Marinara 2.5.2, 안전장치 4단계)
 
 1. **`.env` 게이트**: 설치 폴더의 `.env`에 `ENABLE_EXTERNAL_EXTENSIONS=true`
    추가 후 재시작
@@ -56,9 +56,37 @@ CLI 스크립트 `balance.mjs`가 대신합니다.
    가져오기 허용) 켜기
 3. **가져오기**: [**Releases 페이지**](../../releases/latest)에서
    `marinara-balance-widget.zip` 을 내려받아 **Settings → Addons**(애드온) →
-   **External Extensions**(외부 확장)에서 **압축 그대로** 가져오기
+   **External Extensions**(외부 확장)에서 **Import Extension File**로
+   **압축 그대로** 가져오기. 폴더로 설치하려면 **Import Extension Folder**로
+   `manifest.json`과 `extension.js`가 들어 있는 `extension` 폴더를 선택하세요.
 4. **승인**: 전원 아이콘 → **"전체 페이지 접근"** 승인 창 → **"이 코드
    그대로 실행"** *(확장 파일이 갱신되면 같은 창이 다시 뜹니다 — 정상입니다)*
+
+## GitHub로 설치
+
+Marinara 2.5.2의 **External Extensions**(외부 확장)에는
+**Import Extension File**과 **Import Extension Folder**만 있으며,
+GitHub 설치 입력란은 없습니다. GitHub로 설치하려면 위의 확장 가져오기 허용
+설정을 마친 뒤 [ME.Fetchy](https://github.com/FigCake/ME.Fetchy) 같은
+GitHub 설치 도우미 확장을 설치하고 활성화하세요. 해당 확장의 GitHub 설치
+입력란에 아래 경로를 그대로 입력하세요:
+
+```text
+mallang0723/ME-BalanceWidget/extension
+```
+
+설치 후 **전체 페이지 접근**을 승인하고 활성화하세요. 화면에 버튼과 패널을
+추가하는 데 필요한 기존 권한이며, 이번 변경으로 추가되는 권한은 없습니다.
+
+기존 ZIP 수동 가져오기도 계속 사용할 수 있습니다. 현재 소스로 ZIP을 만들려면
+저장소 루트에서 다음 명령을 실행한 뒤, 생성된 파일을 위의 수동 설치 절차로
+가져오세요. ZIP 루트에 `manifest.json`과 `extension.js`가 함께 들어갑니다.
+
+```bash
+(cd extension && zip ../marinara-balance-widget.zip manifest.json extension.js)
+```
+
+변경 내용은 [변경 이력](./CHANGELOG.md)을 참고하세요.
 
 ## 사용법
 

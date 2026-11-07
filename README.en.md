@@ -54,9 +54,11 @@ Being upfront:
 
 2. **In-app gate**: **Settings → Advanced → Danger Zone → Allow third-party
    extension imports**.
-3. **Import**: download `marinara-balance-widget.zip` from the
-   [**Releases page**](../../releases/latest), then import it **as-is** in
-   **Settings → Addons → External Extensions** using **Import Extension File**.
+3. **Import**: use a GitHub install helper (ME.Fetchy: `mallang0723/ME-BalanceWidget/extension`;
+   [GitHub extension manager](https://github.com/f-en-rep/Marinara-GitHub-Manager):
+   `https://github.com/mallang0723/ME-BalanceWidget`, then choose `extension/manifest.json`),
+   or build a ZIP with `(cd extension && zip ../marinara-balance-widget.zip manifest.json extension.js)`
+   and import it **as-is** in **Settings → Addons → External Extensions** using **Import Extension File**.
    For a folder install, use **Import Extension Folder** and select the
    `extension` folder containing `manifest.json` and `extension.js`.
 4. **Approve**: power icon → the **full page access** dialog → **"Run this

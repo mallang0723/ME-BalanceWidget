@@ -54,11 +54,11 @@ CLI 스크립트 `balance.mjs`가 대신합니다.
 2. **앱 게이트**: **Settings**(설정) → **Advanced**(고급) → **Danger Zone**
    (위험 구역) → **Allow third-party extension imports**(서드파티 확장
    가져오기 허용) 켜기
-3. **가져오기**: [**Releases 페이지**](../../releases/latest)에서
-   `marinara-balance-widget.zip` 을 내려받아 **Settings → Addons**(애드온) →
-   **External Extensions**(외부 확장)에서 **Import Extension File**로
-   **압축 그대로** 가져오기. 폴더로 설치하려면 **Import Extension Folder**로
-   `manifest.json`과 `extension.js`가 들어 있는 `extension` 폴더를 선택하세요.
+3. **가져오기**: 아래의 GitHub 설치 도우미를 쓰거나, 현재 소스로 만든 ZIP을
+   **Settings → Addons**(애드온) → **External Extensions**(외부 확장)에서
+   **Import Extension File**로 **압축 그대로** 가져오기. 폴더로 설치하려면
+   **Import Extension Folder**로 `manifest.json`과 `extension.js`가 들어 있는
+   `extension` 폴더를 선택하세요. ZIP 만드는 법은 아래를 참고하세요.
 4. **승인**: 전원 아이콘 → **"전체 페이지 접근"** 승인 창 → **"이 코드
    그대로 실행"** *(확장 파일이 갱신되면 같은 창이 다시 뜹니다 — 정상입니다)*
 
@@ -67,18 +67,28 @@ CLI 스크립트 `balance.mjs`가 대신합니다.
 Marinara 2.5.2의 **External Extensions**(외부 확장)에는
 **Import Extension File**과 **Import Extension Folder**만 있으며,
 GitHub 설치 입력란은 없습니다. GitHub로 설치하려면 위의 확장 가져오기 허용
-설정을 마친 뒤 [ME.Fetchy](https://github.com/FigCake/ME.Fetchy) 같은
-GitHub 설치 도우미 확장을 설치하고 활성화하세요. 해당 확장의 GitHub 설치
-입력란에 아래 경로를 그대로 입력하세요:
+설정을 마친 뒤 아래 GitHub 설치 도우미 확장 중 하나를 설치하고 활성화하세요.
 
-```text
-mallang0723/ME-BalanceWidget/extension
-```
+- [**ME.Fetchy**](https://github.com/FigCake/ME.Fetchy): 해당 확장의 GitHub 설치
+  입력란에 아래 경로를 그대로 입력하세요:
+
+  ```text
+  mallang0723/ME-BalanceWidget/extension
+  ```
+
+- [**GitHub 확장 관리자**](https://github.com/f-en-rep/Marinara-GitHub-Manager):
+  저장소 기본 주소만 입력합니다(`/tree/main/...` 경로는 붙이지 않습니다).
+
+  ```text
+  https://github.com/mallang0723/ME-BalanceWidget
+  ```
+
+  이어서 "설치 대상 선택"에서 `extension/manifest.json` 항목을 고릅니다.
 
 설치 후 **전체 페이지 접근**을 승인하고 활성화하세요. 화면에 버튼과 패널을
 추가하는 데 필요한 기존 권한이며, 이번 변경으로 추가되는 권한은 없습니다.
 
-기존 ZIP 수동 가져오기도 계속 사용할 수 있습니다. 현재 소스로 ZIP을 만들려면
+ZIP 수동 가져오기를 쓰려면 현재 소스로 ZIP을 직접 만듭니다.
 저장소 루트에서 다음 명령을 실행한 뒤, 생성된 파일을 위의 수동 설치 절차로
 가져오세요. ZIP 루트에 `manifest.json`과 `extension.js`가 함께 들어갑니다.
 
